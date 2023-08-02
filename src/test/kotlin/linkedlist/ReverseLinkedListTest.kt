@@ -28,4 +28,42 @@ class ReverseLinkedListTest {
         assertTrue(reversed.next?.value == 2)
         assertTrue(reversed.next?.next?.value == 3)
     }
+
+    @Test
+    fun `reverseLinkedListRecur() _ 2,1 _ returns 1,2`() {
+        val list = ListNode(2)
+        list.next = ListNode(1)
+
+        val reversed = reverseLinkedListRecur(list)
+
+        assertTrue(reversed?.value == 1)
+        assertTrue(reversed?.next?.value == 2)
+    }
+
+    @Test
+    fun `reverseLinkedListRecur() _ 3,2,1 _ returns 1,2,3`() {
+        val list = ListNode(3)
+        list.next = ListNode(2)
+        list.next?.next = ListNode(1)
+
+        val reversed = reverseLinkedListRecur(list)
+
+        assertTrue(reversed?.value == 1)
+        assertTrue(reversed?.next?.value == 2)
+        assertTrue(reversed?.next?.next?.value == 3)
+    }
+
+    @Test
+    fun `reverseLinkedListStack() _ 3,2,1 _ returns 1,2,3`() {
+        val list = ListNode(3)
+        list.next = ListNode(2)
+        list.next?.next = ListNode(1)
+
+        val reversed = reverseLinkedListStack(list)
+
+        assertTrue(reversed.value == 1)
+        assertTrue(reversed.next?.value == 2)
+        assertTrue(reversed.next?.next?.value == 3)
+    }
+
 }
