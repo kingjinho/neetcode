@@ -1,7 +1,5 @@
 package tree
 
-import kotlin.math.max
-
 fun maxDepth(root: TreeNode?): Int {
     return if (root == null) {
         0
