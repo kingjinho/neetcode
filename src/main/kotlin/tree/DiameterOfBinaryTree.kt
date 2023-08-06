@@ -1,6 +1,6 @@
 package tree
 
-var max = 0
+private var max = 0
 fun diameterOfBinaryTree(root: TreeNode?): Int {
 
     calculateHeight(root)
