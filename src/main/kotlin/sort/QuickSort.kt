@@ -27,7 +27,7 @@ private fun partition(
     val rightIndex = end - 1
 
     for (i in leftIndex..rightIndex) {
-        if (arr[i] <= pivot) {
+        if (arr[i] < pivot) {
             val temp = arr[i]
             arr[i] = arr[leftIndex]
             arr[leftIndex] = temp
