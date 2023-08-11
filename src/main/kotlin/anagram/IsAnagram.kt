@@ -2,19 +2,16 @@ package anagram
 
 //could not solve on my own
 fun isAnagram(s: String, t: String): Boolean {
-    val charArray = IntArray(26)
+    val array = IntArray(26)
+
     for (c in s) {
-        charArray[c - 'a']++
+        array[c - 'a']++
     }
 
     for (c in t) {
-        charArray[c - 'a']--
+        array[c - 'a']--
     }
 
-    for(i in charArray) {
-        if(i != 0) {
-            return false
-        }
-    }
-    return true
+    return array.all { it == 0 }
+
 }
