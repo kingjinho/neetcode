@@ -8,24 +8,19 @@ fun groupAnagrams(strs: Array<String>): List<List<String>> {
         val map = mutableMapOf<String, MutableList<String>>()
 
         for (s in strs) {
-
             if (map.isEmpty()) {
                 map[s] = mutableListOf(s)
             } else {
-                var hasAnagram = false
-                for (key in map.keys.map { it }) {
-                    if (isAnagram(key, s)) {
-                        hasAnagram = true
-                        if (map[key].isNullOrEmpty()) {
-                            map[key] = mutableListOf(s)
-                            break
-                        } else {
-                            map[key]!!.add(s)
-                            break
-                        }
+                var containsNoAnagram = true
+                for (key in map.keys) {
+                    if (isAnagram(s, key)) {
+                        containsNoAnagram = false
+                        val list = map[key]!!
+                        list.add(s)
+                        break
                     }
                 }
-                if (!hasAnagram) {
+                if (containsNoAnagram) {
                     map[s] = mutableListOf(s)
                 }
             }
