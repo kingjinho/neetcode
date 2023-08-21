@@ -47,9 +47,6 @@ fun isAnagram(s: String, t: String): Boolean {
 }
 
 fun groupAnagramsByOthers(strs: Array<String>): List<List<String>> {
-
-    val groupBy = strs.groupBy { it.toCharArray().sortedArray() }
-    val map = groupBy.map { it.value }
-
-    return map
+    val groupBy = strs.groupBy { it.toCharArray().sorted() }
+    return groupBy.map { it.value }
 }
