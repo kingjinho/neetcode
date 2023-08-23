@@ -20,13 +20,12 @@ fun productExceptSelf(nums: IntArray): IntArray {
 }
 
 fun productExceptSelfByOthers(nums: IntArray): IntArray {
-    val n = nums.size
-    val ans = IntArray(n)
+    val ans = IntArray(nums.size)
     var pro = 1
     for (i in nums) {
         pro *= i
     }
-    for (i in 0 until n) {
+    for (i in ans.indices) {
         ans[i] = pro / nums[i]
     }
     return ans
